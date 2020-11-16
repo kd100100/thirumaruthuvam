@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/icon.png">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+    <link rel="stylesheet" type="text/css" href="../css/nearby.css">
+    <link rel="stylesheet" type="text/css" href="../css/datamanager.css">
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+    
+    
+    <!-- Data Manager -->
+    <div onclick="opendatamanager()" id="openbutton">
+        <h4>Health Recorder</h4>
+    </div>
+    <div id="datamanager">
+        <div class="row">
+            <div class="col-lg-12 title"><h1 class="">Medical Data Manager</h1></div>
+            <div class="col-lg-12 doctorlist" id="problemslist">
+                <div class="row">
+                    <div class="col-lg-6"><h3 class="heading">Doctor</h3></div>
+                    <div class="col-lg-6"><h3 class="heading">Problem</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="openaddremove()" class="btn btn-outline-success">Add/Remove Doctors</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">Close</div></div>
+                    </div>
+                </div>    
+            </div>   
+            <div class="col-lg-12 doctorlist" id="doctorslist">
+                <div class="row">
+                    <div class="col-lg-5"><h3 class="heading">Reg. No.</h3></div>
+                    <div class="col-lg-7"><h3 class="heading">Doctor</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">Remove Access ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">Remove Access ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div class="col-lg-12"><input type="text" name="" id='' placeholder="+ Add Doctor's Registration Number"><i onclick="" class="fa fa-check"></i></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="closeaddremove()" class="btn btn-outline-success">Data Manager</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">Close</div></div>
+                    </div>
+                </div>    
+            </div>        
+        </div>
+        
+    </div>
+    <script>
+        function opendatamanager(){
+            document.getElementById('datamanager').style.right='0';
+        }
+        function closedatamanager(){
+            document.getElementById('datamanager').style.right='-500px';
+        }
+
+        function opendetailed(){
+            document.getElementById('probdetail').style.display='block';
+        }
+        function opendelete(){
+            document.getElementById('remove').style.display='block';
+        }
+        function openaddremove(){
+            document.getElementById('problemslist').style.display='none';
+            document.getElementById('doctorslist').style.display='block';
+        }
+        function closeaddremove(){
+            document.getElementById('problemslist').style.display='block';
+            document.getElementById('doctorslist').style.display='none';
+        }
+    </script>
+    
+
+
+    <!-- Navbar -->
+    <header>
+        <a href="t_library.html"><img src="../imgs/translate.png" class="translate" alt=""></a>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                <img src="../imgs/icon.png" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Thiru Maruthuvam
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="forum_public.html">Forum</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link height" href="nearby.html">Nearby <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link height" href="verify.html">Verify</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link height" href="library.html">D-Library</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="shop_cust.html">Shop</a>
+                    </li>
+                    <li class="nav-item nearby_button">
+                    <a class="nav-link" href="login_public.html"><button class="nearby_btn">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                    <li class="nav-item nearby_button" style="display: none;">
+                    <a class="nav-link" href="#"><button class="nearby_btn">Logout<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+
+    <!-- Content -->
+
+    <div class="searchnav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="title">Search for Nearby Hospitals</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hospital">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input" id="myDropdown">
+                    <input onclick="showitem()" type="text" placeholder="&#128269; Search by Name/Location" id="myInput" onkeyup="filterFunction()">
+                    <div class="row">
+                        <div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Varmanium Foundation</h3><hr><p>Kombavilai, Agasteeswaram | 08508085858
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Paramasivam R.</h3><hr><p>Pullanviduthi, Alangudi | 04322253590
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">R.S.P.N. Varma Vaidhya Salai</h3><hr><p>Vaikundaram Nagar, Alangulam | 09791885382
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr. Kingsly</h3><hr><p>Jothi Nagar, Alangulam | 04633247111
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">I.R.K. Hospital & Research Centre</h3><hr><p> Ambasamudram | 07598665383
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr. Lakshmi Narayanan</h3><hr><p>Sengunthar East Street, Ambasamudram | 04634251075
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr. Michael Jayaraj</h3><hr><p>Arch Street, Ambasamudram | 04634452028
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aviztham Siddha Hospital</h3><hr><p>Mounasamy Madam Street, Ambattur | 09444403023
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Rvita Health Center</h3><hr><p>Vadivelu Mudali Street, Ambattur | 09500123412
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Amirtham Siddha Research Centre</h3><hr><p>E.V.R Salai, Aminjikarai | 09444919352
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Nalam Ayurveda Hospital</h3><hr><p>West College Road, Aminjikarai | 04466949433
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jeeva Viruksham Multi Speciality Herbal Health Centre</h3><hr><p> Aminjikarai | 09840567900
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Adhees Siddha Care Clinic</h3><hr><p>Sholingar Road, Arakonam | 09884168061
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Velur Sri Ammbal Siddha Hospital</h3><hr><p>Sharaff Periyakadai Street, Arani | 09443420865
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Guna Siddha Clinic</h3><hr><p>Market Street, Arcot | 09443430093
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dhanvantari Siddha Clinic</h3><hr><p>Kalavai Road, Arcot | 0416237560
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S.A.S. Siddha Clinic</h3><hr><p>Lakshmi Talkies Road, Ariyalur | 09600527195
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Arulperum Jothi Sidha Hospital</h3><hr><p> Attur | 042822250606
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Swami Sivananda Vijayam Vaidiya Sala</h3><hr><p> Attur | 04282235127
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Balaji Siddha Homoeopathy</h3><hr><p>Thirumurgan Poondi, Avinashi | 09790657761
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">M.A.M. Clinic</h3><hr><p>Konnur High Road, Ayanavaram | 09380873998
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Suji Siddha & Homoeo Clinic</h3><hr><p> Ayanavaram | 09790749866
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S.M.K. Nature Clinic</h3><hr><p> Ayanavaram | 04426460436
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sree Kannan Siddha Hospital</h3><hr><p>Oricherry Post, Bhavani | 09688011950
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dhanwanthari Ayurveda Hospital</h3><hr><p> Bodinayakanur | 09443498311
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Ayurvedic Clinic</h3><hr><p> Chengalpattu | 09087973177
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jayam Siddha Herbal Clinic</h3><hr><p>T.K.M. Road, Chengalpattu | 09894063501
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">ES Siddha Clinic</h3><hr><p>Railway Station Road, Chengalpattu | 09750251861
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Ameriya Hospital</h3><hr><p>Millath Nagar, Chengam | 09791873374
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Shri Puttru Makarakshi Siddha Clinic</h3><hr><p>Mogappair West, Chennai | 04426531452
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Maharishhi Siddha Hospital</h3><hr><p>Kumarappa Mudali Street, Chennai | 04428220089
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Arogya Ayurveda Clinic</h3><hr><p>West Sivan Koil Street, Chennai | 04424896778
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Puttru Maharashi Sidha Clinic</h3><hr><p>Aumantha Pet, Cheyyar | 09842323281
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">M.R. Dakshinamurthy</h3><hr><p>Chetty Street, Cheyyar | 09843379773
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">G. Subramaniam</h3><hr><p>Gopal Street, Cheyyar | 04182224309
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">NS Siddha Hospital</h3><hr><p>V.G.P. Street, Chidambaram | 09443591393
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">G.R.G.R. Herbals Siddha Hospital</h3><hr><p>Saliyanthoppu, Chidambaram | 09940436399
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Lakshmanan Siddha Vaithia Salai</h3><hr><p> Chidambaram | 04144243490
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Mangalam Sidha Ayurveda Vaidhya Salai</h3><hr><p>Peelamedu, Coimbatore | 04222512068
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siva Shakthi Siddha Clinic</h3><hr><p>RS Puram, Coimbatore | 04222542947
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Arunthadhi Hospital</h3><hr><p>Ramanathapuram, Coimbatore | 04223223548
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Ayurveda Yoga Retreat</h3><hr><p>Kambisholai Road, Coonoor | 04232231912
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Safeena Clinic</h3><hr><p>Stanley Park, Coonoor | 04232206710
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Vaydhiasalai Herbal</h3><hr><p>Ottupattarai, Coonoor | 04232207898
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiya Siddha Welliness Clinic</h3><hr><p>Semmandalam, Cuddalore | 04142291994
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">V.M.S. Siddha Vaithiyam</h3><hr><p>Sethiathope, Cuddalore | 09488589756
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sitharin Siddha Vaidhiya Salai</h3><hr><p>Parvathipuram, Cuddalore | 09600849357
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Divine Siddha & Ayurvedha Hospital</h3><hr><p> Devakottai | 09843097388
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Kumaran Siddha Hospital</h3><hr><p>Udumalai Road, Dharapuram | 09786102700
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Restoration Centre</h3><hr><p> Dharapuram | 09442435197
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dharmapuri Hospital</h3><hr><p>Annadurai Road, Dharmapuri | 04342263363
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Mallar Siddha Hospital</h3><hr><p>Thimothis Street, Dharmapuri | 04342262981
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Lakshim Sidha Hospital</h3><hr><p>Batlagundu, Dindigul | 09486927871
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Imayam Siddha Clinic</h3><hr><p> Dindigul | 09842139159
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Chellam Sidhha Medical Centre</h3><hr><p>Y.M.R. Patti, Dindigul | 08675134040
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Health India Foundation</h3><hr><p>Montieth Road, Egmore | 09444903533
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Muthukumaran GS</h3><hr><p>Vengu Pillai Street, Egmore | 04428190780
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Erode Naturopathy Hospital</h3><hr><p> Erode | 09715013357
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Rajamani Siddha Ayurvedic Hospital</h3><hr><p> Erode | 09486904791
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiyar Siddha Hospital</h3><hr><p>Moolappalayam, Erode | 09994922222
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sakthi Siddha Clinic</h3><hr><p>Surampatti, Erode | 09486111862
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S.K.M. Siddha & Ayurveda Co. India Ltd.</h3><hr><p> Erode | 04242259293
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">SK Siddha Hospital</h3><hr><p>Dr.Venkataramn Street, Gobichettipalayam | 04285226002
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">P. M. Sharavanan</h3><hr><p>Cutchery Street, Gobichettipalayam | 09047077650
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.GK Perarasan</h3><hr><p>S.D.N. Colony, Gobichettipalayam | 09486814502
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">RK Siddha Hospital</h3><hr><p>Melagudular, Gudalur | 09942360359
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.N. Ramesh Naidu</h3><hr><p>Pakkam Village, Gudiyatham | 09994486669
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vaidyar N. Ramesh Naidu</h3><hr><p>Pakkamvenkatapuram, Gudiyatham | 08286452925
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thirunandhi Siddha Clinic</h3><hr><p>JN Street, Guindy | 04439942513
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Raghavans Ayurveda & Siddha Panchakarma Centre</h3><hr><p> Harur | 04346222830
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Amman Siddha Clinic</h3><hr><p>Newpet, Hosur | 09994667379
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Om Clinic</h3><hr><p>Nanjundeshwara Temple Street, Hosur | 09941491742
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Kavin Siddha Clinic</h3><hr><p> Hosur | 09443633112
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thenkarai Maharajan</h3><hr><p>Melaputheri, Kalkulam | 09944045155
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">SG Sidha Clinic</h3><hr><p>Chekku Mettu Street, Kallakurichi | 09442444034
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Kumaran Sidha Clinic</h3><hr><p>Mosque Street, Kallakurichi | 09789065978
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Hari Sidha Clinic</h3><hr><p>Kulathu Mettu Street, Kallakurichi | 09443877969
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Sai Siddha Cure</h3><hr><p>Kottarampalyam Street, Kancheepuram | 09791177117
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Ayurveda Clinic</h3><hr><p>Kamarajar Street, Kancheepuram | 09443084155
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sithergal Parambariyam</h3><hr><p>Velingapattarai Street, Kancheepuram | 09791617139
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Iswarya Siddha Hospital</h3><hr><p>Tirupur Road, Kangayam | 09994972227
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Santhigiri Ayurveda & Siddha Vaidyasala</h3><hr><p> Kanyakumari | 04652232206
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Amirtha Surabhi Ayurveda Siddha Marma Hospital</h3><hr><p> Kanyakumari | 04651247517
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">GS Ayurvedhic & Accupunture Hospital</h3><hr><p>Main Road, Kanyakumari | 09443102090
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Karuppar Clinic</h3><hr><p>Nethaji Road, Karaikudi | 04565234969
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Pushpam Clinic</h3><hr><p>Meenakshipuram, Karaikudi | 09865436719
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr. K.S. Muthu</h3><hr><p>Main Road, Karaikudi | 07639344669
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thabitha Siddha Clinic</h3><hr><p>Pirathatchanam Road, Karur | 09365890792
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sakthi Siddha Hospital</h3><hr><p>Vengamedue, Karur | 09245864198
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aadhavan Herbals Diet Clinic</h3><hr><p>Sengunthapuram, Karur | 07708176667
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Balaji Siddha & Ayurveda Hospitals</h3><hr><p>V.I.T. Road, Katpadi | 09994842417
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vijays Siddha Ayurvedic Hospital</h3><hr><p>West Street, Kilvelur | 09600198085
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Nazar Hospital</h3><hr><p>Palaniandavar Koil Street, Kovilpatti | 04632221379
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Gobusiva</h3><hr><p>Loyal Mill Colony, Kovilpatti | 08940957022
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Kalavai Swami R.</h3><hr><p>Vakkil Road, Kovilpatti | 09994137354
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Anandham Siddha Hospital</h3><hr><p>Old Sub Jail Road, Krishnagiri | 09486117202
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Bogar Maharishi Siddha Vaidhiya Salai</h3><hr><p> Krishnagiri | 09791577578
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">M. Nagaraj Siddha Doctor</h3><hr><p>Mekalachinnampalli, Krishnagiri | 09751270175
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Andhi Parambarai Vaithiyasalai & Jothida Nilayam</h3><hr><p> Kulathur | 04339227600
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Sivas Siddha Clinic</h3><hr><p> Kumbakonam | 04352425215
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Viswakarma Siddha & Homeo Care</h3><hr><p>Melakaveri, Kumbakonam | 09443018127
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">John Siddha Vidhiya Nibunar</h3><hr><p>Gomathi Nagar, Kumbakonam | 04352412386
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Alma Siddha Care Clinic</h3><hr><p> Lalgudi | 08122295674
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Santhigiri Ayurveda & Siddha Hospital</h3><hr><p> Madurai | 04526450311
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Lakshmanan</h3><hr><p>K. Pudur, Madurai | 09842109122
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Meenakshi Siddha Clinic</h3><hr><p>Hyadkhan Street, Madurai | 04522334464
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Thompson V.</h3><hr><p>Aynapuram, Manachanallur | 09443424010
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Marutham Siddha Hospital</h3><hr><p> Manapparai | 09884166739
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sivaguru Hospital</h3><hr><p>Perugavalandhan Main Road, Mannargudi | 04367274420
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Adivasis Tribals Natural Herbal Clinic</h3><hr><p> Mannargudi | 09940933956
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">TK Swamy</h3><hr><p>Mahadha Street, Mayiladuthurai | 04364224269
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Maruthi Siddha Hospital</h3><hr><p>Koranadu, Mayiladuthurai | 04364220467
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.K. Kanmani</h3><hr><p>Thirumanjana Street, Mayiladuthurai | 04364220001
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aadhithya Hospital</h3><hr><p>Sivaganga Road, Melur | 04522416444
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Agathiyar Siddha Muligai Maruthuvam</h3><hr><p> Melur | 09786870387
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">A.V.P. Siddha Ayurvedhic Clinic</h3><hr><p> Mettur | 09443828018
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Hitech Siddha Clinic</h3><hr><p>Arch-Crosscut Road, Mettur | 09443205549
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Adhithya Siddha Clinic</h3><hr><p>Thuraiyur Road, Musiri | 09443916309
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Vinayaga Ayurvedic Stores & Clinic</h3><hr><p> Mylapore | 09841810411
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Velmurugan</h3><hr><p>Veera Perumal Koil Street, Mylapore | 04424992664
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Parambarya Siddha Maruthva Nilayam</h3><hr><p> Mylapore | 04439615611
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Semmandalam Clinic</h3><hr><p>Kamarajar Street, Nagapattinam | 04364270568
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vallalar Siddha Clinic</h3><hr><p> Nagapattinam | 09786873286
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Achariyas Ayrvedic's Vaithiyasalai</h3><hr><p> Nagercoil | 9443693100
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sanjevanam Ayurvedic Panjakarma Clinic</h3><hr><p> Nagercoil | 04652325182
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Thanvanthiri Ayurveda Clinic</h3><hr><p> Nagercoil | 04652235061
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Mathi Siddha Clinic</h3><hr><p>Dr.Sangaran Road, Namakkal | 09842767826
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sarvam Health Care</h3><hr><p>Thummankurichi, Namakkal | 09443288437
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.M. Uma Maheswari</h3><hr><p>Mohanur, Namakkal | 04286256569
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Heart Touch Home Ayurvedic & Siddha Hospital</h3><hr><p> Nanguneri | 09787688055
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sivaraj Siddha Vaithiya Salai</h3><hr><p> Nungambakkam | 04428236780
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Maharishhi Siddha Hospital</h3><hr><p>Kumarappa Street, Nungambakkam | 04433297416
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S.K.M. Siddha Hospital & Pharmacy</h3><hr><p>Kumarappa Street, Nungambakkam | 04428220089
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sowdambikai Sidha Hospital</h3><hr><p>Dharapuram Road, Oddanchatram | 09500196736
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Niraimathi Siddha Hospital</h3><hr><p> Oddanchatram | 09786545856
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Mind Siddha & Homoepathic</h3><hr><p>Karaisavadi, Omalur | 04290315628
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Vaydhiasalai</h3><hr><p>Ottupattarai, Ooty | 04232207898
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Malayappasami Vaidyasalai</h3><hr><p> Palani | 04545242275
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Karthikeya Sidda Clinic</h3><hr><p>Old Tharapuram Road, Palani | 04545245499
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.K.Somasekaran</h3><hr><p>Perumalpuram, Palayamkottai | 09486614250 (v)
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.GVS Thanvanthri Siddha Clinic</h3><hr><p> Palayamkottai | 08883447447
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Sugam Siddha Clinic</h3><hr><p>St.Thomas Road, Palayamkottai | 09944418586
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aditya Siddha Clinic</h3><hr><p> Palayamkottai | 09443403094
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Amrith Siddha Clinic</h3><hr><p>Therkku Palayam Pirivu, Palladam | 09360617180
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Advisor</h3><hr><p>Balaji Nagar, Palladam | 09965464992
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thirunavukarasu</h3><hr><p>Diversion Road, Panruti | 04142241801
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vivekanantha Homeo & Siddha</h3><hr><p> Panruti | 04439942517
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Senthil Kumar</h3><hr><p> Panruti | 04142244899
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Saradha Siddha Clinic</h3><hr><p> Papanasam | 09952141986
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.A. Athinarayanan</h3><hr><p> Papanasam | 04374222601
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sidha Hospital</h3><hr><p> Pappireddipatti | 09842829095
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Raj Siddha Vaithiya Salai</h3><hr><p>Thiruvalluvar Salai, Paramathi- Velur | 09486160724
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Rasi Sidha Clinic</h3><hr><p>Mettu Street, Perambalur | 09655683683
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Amrutha Ayurvedic Clinic</h3><hr><p>Vadakumadhavi Salai, Perambalur | 08754329030
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Suri Vaideya Salai</h3><hr><p> Perambalur | 09965948641
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Murugan Siddha Hospital</h3><hr><p>M.P.M. Street, Perambur | 09380541895
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">GK Hospital and Siddha Herbal</h3><hr><p> Perambur | 04425571508
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Agathier Siddha Ayurveda Clinic</h3><hr><p> Perambur | 09841429296
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">DR.M. Iqbal</h3><hr><p> Peravurani | 04373233888
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Sangamesvarar M.</h3><hr><p>Kunnathur Road, Perundurai | 09363112577
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Siddhar Nilayam</h3><hr><p> Perundurai | 09750376816
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Shakti Clinic</h3><hr><p>Kandampalayam, Perundurai | 09443729982
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Astrologer Sakthi Subramaniam</h3><hr><p> Perur | 04222616463
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vasan Cell Theraphy Clinic</h3><hr><p>KM Ramanujam Street, Polllachi | 09626030730
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Siddhar Nilayam</h3><hr><p>Iyyappan Kovil Street, Polllachi | 04259224501
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">V.S.M. Ayurveda</h3><hr><p>Iman Khan Street, Polllachi | 09443080810
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jeeva Siddha Hospital</h3><hr><p> Polur | 09791087424
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sai Siddha Clinic</h3><hr><p>RS Road, Polur | 09894072481
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Abirami</h3><hr><p>Ramanujam Nagar, Polur | 09443809592
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thiru Ganesar Siddha Hospital</h3><hr><p>Kosavan Pettai, Ponneri | 09994185248
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiyar Vaidhiya Salai</h3><hr><p> Ponneri | 09942023759
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Selvamani Siddha Ayurvedic Clinic</h3><hr><p> Poonamallee | 04433893495
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vel Siddha Clinic</h3><hr><p>Vaitheeswaran Kovil Street, Poonamallee | 04433039940
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Rangasamy Clinic</h3><hr><p>PH Road, Poonamallee | 09444257245
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Siddha Clinic</h3><hr><p>Santhanathapuram, Pudukkottai | 09443113319
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Meera Mohaideen Rawthar Siddha Clinic</h3><hr><p> Pudukkottai | 09943728414
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sadhasiva Sidha Clinic</h3><hr><p> Pudukkottai | 09344014248
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Doveton Siddha Clinic</h3><hr><p> Purasawalkam | 09150197649
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Suriyaa Bharat Hospital</h3><hr><p>PH Road, Purasawalkam | 04426673805
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aadhavan Siddha Clinic</h3><hr><p>Vadamalai Street, Purasawalkam | 04432717527
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiyar Siddha Hospital</h3><hr><p>Tenkasi Road, Rajapalayam | 04563221364
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Magarasi Pharama & Shidda</h3><hr><p>Railway Feeder Road, Rajapalayam | 09965547518
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Astrology Siddha Medical Treatment Centre</h3><hr><p> Rameswaram | 09942132876
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">K Kannan Sidha Doctor</h3><hr><p> Rasipuram | 09965804207
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Ragavendra Siddha Clinic</h3><hr><p> Rasipuram | 09865970220
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Selva Siddha Clinic</h3><hr><p> Rasipuram | 09842785101
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Old Bus Stand</h3><hr><p> Salem | Anjeneya Sidda Clinic- 09080102037
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr. Eswaran Hospital</h3><hr><p>Swarnapuri, Salem | 04272445547
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sivaraj Siddha Vaidhiya Salai</h3><hr><p>Tamil Sangam Road, Salem | 04272419782
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Rani Clinic</h3><hr><p>Gomathiyapuram, Sankarankovil | 04636225883
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Herbocare Hospital</h3><hr><p>Victoria Extension Road, Sankarapuram | 08508140004
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">K. Agila Selvaraj</h3><hr><p>Vembukottai Road, Sathur | 04562261144
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Guru Siddha Health Care</h3><hr><p>Jawahar Main Road, Sathyamangalam | 09790659395
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dhanvantri Siddha Health Centre</h3><hr><p>Kamarajar Street, Sirkali | 04364270568
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">VM Siddha Maruthvam</h3><hr><p>Marava Street, Sivaganga | 09942205386
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Velmurugan M.</h3><hr><p>Marava Street, Sivaganga | 09942205386
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Ramya Tamil Clinic</h3><hr><p>Gandhi Road, Sivaganga | 08754023480
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Vedha Maharishi Maruthuva Maiyam</h3><hr><p> Sivakasi | 09443327856
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Arivudai Nambi</h3><hr><p>Badrakaliamman Koil Street, Sivakasi | 04562222453
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Thenmozhi Clinic</h3><hr><p>Ramanujam Street, Sriperumbudur | 09994551441
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jeevapriya Herbal Hospital</h3><hr><p>Gandhi Road, Sriperumbudur | 09843364161
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Bharathi Ganesh R.</h3><hr><p> Sriperumbudur | 09843364141
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sarada Ayurveda Clinic</h3><hr><p>Srirangam West, Srirangam | 09790933421
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S. Muthu Raman Mooligai Vaithiyar</h3><hr><p>Sivagalai, Srivaikundam | 09597914501
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Padhinan Sithar Siddha Hospital</h3><hr><p>Keelarad Street, Srivilliputhur | 09443545055
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sivanandha Siddha Ayurveda Pharmacy</h3><hr><p>Kalangal Road, Sulur | 09843012441
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">GM Clinic</h3><hr><p>Gowrivakkam, Thambaram | 04439942517
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jyothi Siddha & Ayurveda Hospital</h3><hr><p>Tambaram West, Thambaram | 04433025963
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Guru Siddha Vaithya</h3><hr><p>Gandhi Road, Thambaram | 04433075407
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Chakra Clinic</h3><hr><p>Rajaji Nagar, Thanjavur | 09791403724
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Surabhi Ayurveda Hospital</h3><hr><p>Kandiyur, Thanjavur | 09715361481
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Rohini Ayurveda Health Care</h3><hr><p> Thanjavur | 04362226029
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Santhigiri Ayurveda & Siddha Vaidyasala</h3><hr><p>LS Road, Theni | 04554272755
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Herbo Care</h3><hr><p>Gandhiji Road, Theni | 08508820002
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sugam Siddha Hospital</h3><hr><p>Forest Road, Theni | 09865520065
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Mohideen Pitchai Annavi E.</h3><hr><p>Kadayanallur, Thenkasi | 04633243118
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Susrutha Sidda Clinick</h3><hr><p> Thenkasi | 09345529023
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sirajudeen A.</h3><hr><p>West Rahu Street, Thenkasi | 09842589660
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Raja Siddha Hospital</h3><hr><p>Thokkavadi Post, Tiruchengode | 04288274731
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Mukambiga Siddha Clinic</h3><hr><p> Tiruchengode | 09994344023
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Padma</h3><hr><p>Thokkavadi, Tiruchengode | 04286274731
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Amman Siddha Vaidhiya Salai</h3><hr><p> Thirumayam | 09894338137
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Maharishi Pharma</h3><hr><p>Manavalanagar, Thiruvallur | 09842447528
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Pathanjali Yoga Sikichalaya & Siddha Vaithiya Salai</h3><hr><p> Thiruvallur | 09159781266
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiya Siddha Clinic</h3><hr><p>Manavalanagar, Thiruvallur | 09787976331
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Dhanvandri Sidha Ayurvedha Clinic</h3><hr><p>Nethaji Road, Thiruvarur | 07373954574
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.M. Ramakrishnan</h3><hr><p>Vilakudi, Thiruvarur | 09442871937
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Annamalaiyar Sidha Clinic</h3><hr><p>Tiruturaipundi, Thiruvarur | 09488547493
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Aathi Siddha Clinic & Medicals</h3><hr><p>Andal Street, Thoothukudi | 09715967748
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">R.S.R. Siddha Clinic</h3><hr><p>Durai Raj Road, Thoothukudi | 09751855484
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Raja Clinic</h3><hr><p>Sundararamapuram, Thoothukudi | 09894970911
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Gokul Sidha Clinic</h3><hr><p>Perumal Koil Street, Thuraiyur | 09942287137
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Appi Siddha & Ayurvedha Natural Vaidyashala</h3><hr><p> Thuraiyur | 09842357397
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Siddha Varma Vaidhyasalai</h3><hr><p>Udangudi, Tiruchendur | 09150072150
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Siddhar Nilayam</h3><hr><p>Woriyur, Trichy | 09750376816
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Pothikai Siththa Clinic</h3><hr><p>Ariyamangalam, Trichy | 09842899955
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Athma Siddha Hospital</h3><hr><p>Kattur, Trichy | 09043523332
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Al Shifa Ayush Health Care</h3><hr><p>Perumalpuram, Tirunelveli | 04622554664
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Madheena Parampariya Siddha Vaidya Salai</h3><hr><p> Tirunelveli | 04637240917
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Cure Siddha Clinic</h3><hr><p>Krishnapuram, Tirunelveli | 04622586484
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Hameed Ayurvedic</h3><hr><p>C.S.S. Street, Tirupathur | 09994335244
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Malar Siddha Hospital</h3><hr><p>Agaragaram Street, Tirupattur | 09940222305
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Tamil Siddhar Nilayam</h3><hr><p>Pudupet Main Road, Tirupattur | 09750376816
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Iswarya Siddha Hospital</h3><hr><p>PN Road, Tirupur | 04212481248
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Giriveni Siddha Hospital</h3><hr><p>PN Road, Tirupur | 09566408589
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Anjeneya Sidda Clinic</h3><hr><p>Aranmanipudur, Tirupur | 04214250037
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">NS Periyasamy</h3><hr><p> Tiruvannamalai | 09976864276
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Om Sakthi Clinic</h3><hr><p>Big Street, Tiruvannamalai | 04715237798
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Annamalaiyar Siddha Vaidhiya Salai</h3><hr><p> Tiruvannamalai | 09566802652
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Raghavendra Hospital</h3><hr><p> Tondiarpet | 04425956416
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Surat Siddha & Ayurveda Herbal Clinic</h3><hr><p>Dr.Natesan Salai, Triplicane | 04428446499
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Raja Rajeswari Siddha Vaidya Salai</h3><hr><p> Triplicane | 04428444721
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Oushadalaya</h3><hr><p>Big Street, Triplicane | 04433892236
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sri Harish Siddha Hospital</h3><hr><p>Big Bazaar Street, Udumalpet | 09843090792
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Suganya Siddha Clinic</h3><hr><p>Trichy Main Road, Ulundurpet | 09786865899
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Arul Nambi Siddha Hospital</h3><hr><p> Ulundurpet | 09488148694
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">KG Siddha & Yoga Center</h3><hr><p> Valapady | 09362078793
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Judge V Balaramiah Siddha Cancer Hospital</h3><hr><p> Vandavasi | 04183246384
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Ayurvedic Sidha Clinic</h3><hr><p>Gandhi Road, Vandavasi | 08122285026
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Healthcare Siddha Clinic & Pharmacy</h3><hr><p> Vandavasi | 09500619109
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Imayam Siddha Clinic</h3><hr><p> Vedaraniam- North Street | 09344051031
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.Gayatri Ayurvedha Clinic</h3><hr><p>Gandhi Nagar, Vellore | 04162247879
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Radhika Siddha Clinic</h3><hr><p>Sathuvachari, Vellore | 04162257251
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sanjivani Ayurvedic Hospital</h3><hr><p>Katpadi, Vellore | 09994747528
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Amruthi Clinic Ayurveda</h3><hr><p> Velacheri | 04466949440
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Jeroms Siddha Hospital</h3><hr><p> Velacheri | 04433891119
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Annai Hospital</h3><hr><p>4th Main Road, Velacheri | 04422431664
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Shri Dharu Siddha Hospital</h3><hr><p>Hospital Road, Villupuram | 09841184548
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Ohm Murugan Siddha Hospital</h3><hr><p>Thiru.V.Ka. Street, Villupuram | 09363215487
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Agathiya Siddha Herbal Health Clinic</h3><hr><p> Villupuram | 09962582470
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Life Center Hospital</h3><hr><p>West Car Street, Virudhunagar | 09489272227
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">S.Sriram</h3><hr><p>Sithakadhi Street, Virudhunagar | 04562246596
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Dr.R.Koodalingam</h3><hr><p>Mamsapuram, Virudhunagar | 04562285622
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">City Ayurveda Clinic</h3><hr><p>Hanumar Koil Street, WestMambalam | 04433011390
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Samhitha Ayurvedic Health Care & Research Center</h3><hr><p> West Mambalam | 04433011390
+                        </p></div></div></div></div><div class="col-lg-6"><div class="listofhos"><div class="row marg"><div class="col-lg-12"><h3 class="name">Sangeeth Siddha Clinic</h3><hr><p>Govindan Road, West Mambalam | 04428344244
+                        </p></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 branding">
+                    <img src="../imgs/icon.png" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;Thiru Maruthuvam
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Find us at:</p>
+                    <p class="address">
+                        #123, XYZ Street, ABC Colony, <br>Madhurovoyal, Chennai, <br>Tamilnadu, India <br>Pincode: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Contact us at:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = document.getElementsByClassName("col-lg-6");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = 'block';
+            }   
+            else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+</body>
+</html>

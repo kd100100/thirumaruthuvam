@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>முகப்பு</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/icon.png">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+    <link rel="stylesheet" type="text/css" href="../css/datamanager.css">
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <script src="../index.js"></script>
+
+</head>
+<body>
+
+    <!-- Data Manager -->
+    <div onclick="opendatamanager()" id="openbutton1">
+        <h4>சுகாதார பதிவுகள் </h4>
+    </div>
+    <div id="datamanager">
+        <div class="row">
+            <div class="col-lg-12 ttitle"><h1 class="">தரவு மேலாளர்</h1></div>
+            <div class="col-lg-12 doctorlist" id="problemslist">
+                <div class="row">
+                    <div class="col-lg-6"><h3 class="heading">டாக்டர்</h3></div>
+                    <div class="col-lg-6"><h3 class="heading">பிரச்சனை</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="openaddremove()" class="btn btn-outline-success">சேர்க்கவும் / நீக்கவும்</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">மூடு</div></div>
+                    </div>
+                </div>    
+            </div>   
+            <div class="col-lg-12 doctorlist" id="doctorslist">
+                <div class="row">
+                    <div class="col-lg-5"><h3 class="heading">பதிவு எண்</h3></div>
+                    <div class="col-lg-7"><h3 class="heading">டாக்டர்</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">அணுகலை அகற்று ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">அணுகலை அகற்று ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div class="col-lg-12"><input type="text" name="" id='' class="input" placeholder="+ மருத்துவரின் பதிவு எண்ணைச் சேர்க்கவும்"><i onclick="" class="fa fa-check"></i></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="closeaddremove()" class="btn btn-outline-success">தரவு மேலாளர்</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">மூடு</div></div>
+                    </div>
+                </div>    
+            </div>        
+        </div>
+        
+    </div>
+    <script>
+        function opendatamanager(){
+            document.getElementById('datamanager').style.right='0';
+        }
+        function closedatamanager(){
+            document.getElementById('datamanager').style.right='-500px';
+        }
+
+        function opendetailed(){
+            document.getElementById('probdetail').style.display='block';
+        }
+        function opendelete(){
+            document.getElementById('remove').style.display='block';
+        }
+        function openaddremove(){
+            document.getElementById('problemslist').style.display='none';
+            document.getElementById('doctorslist').style.display='block';
+        }
+        function closeaddremove(){
+            document.getElementById('problemslist').style.display='block';
+            document.getElementById('doctorslist').style.display='none';
+        }
+    </script>
+
+        
+   <!-- Appointment -->
+   <div class="postbg" id="post_bg">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 postbox" id="post_box"> 
+            <h1 class="logintitle">நியமனம்</h1>
+            <button onclick="close_post()" class="btnclse"><i class="fa fa-close"></i></button>
+            <hr>
+            <form>
+                <label for="doctor">டாக்டர்:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select id="doctor" name="doctor" class="docnameinput">
+                    <option value="1">டாக்டர் எஸ் பிரியா</option>
+                    <option value="2">டாக்டர் பிரசாத் டி</option>
+                    <option value="3">டாக்டர் பெஞ்சமின் இ</option>
+                </select>
+                <label for="datetime">தேதி & நேரம்: &nbsp;&nbsp;</label>
+                <input type="datetime-local" id="datetime" name="birthdaytime">
+                <button id="book_button" onclick="openconfirmation()" type="button" class="btn btn-outline-light postbtn">புத்தக நியமனம்</button>
+                <div id="confirmationmsg">
+                    <p>மெய்நிகர் சந்திப்பு நற்சான்றிதழ்களுடன் நியமன<br>விவரங்களில் விரைவில் ஒரு செய்தியைப் பெறுவீர்கள்.</p>
+                    <button onclick="close_post()" type="button" class="btn btn-outline-light postbtn1">உறுதி செய்</button>
+                    <button onclick="close_post()" type="button" class="btn btn-outline-light postbtn1">ரத்துசெய்</button>
+                </div>
+                
+            </form>
+        </div>        
+        <div class="col-lg-3"></div> 
+    </div>
+    </div>
+</div>
+<script>
+    function open_post(){
+        document.getElementById('post_bg').style.display='block';
+    }
+    function openconfirmation(){
+        document.getElementById('book_button').style.display='none';
+        document.getElementById('confirmationmsg').style.display='block';
+    }
+    function close_post(){
+        document.getElementById('post_bg').style.display='none'
+    }
+</script>
+    
+<div id="eng">
+    <!-- Navbar -->
+    <header>
+        <a href="index.html"><img src="../imgs/translate.png" class="translate" alt=""></a>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                <img src="../imgs/icon.png" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;திரு மருத்துவம்
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="index.html" >முகப்பு</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="about.html">பற்றி</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="forum_public.html">மன்றம்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="nearby.html">அருகில்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="verify.html">சரிபார்க்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="library.html">டி-நூலகம்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="shop_cust.html">கடை</a>
+                    </li>
+                    <li class="nav-item nearby_button">
+                    <a class="nav-link" href="login_public.html"><button class="nearby_btn">நுழை<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                    <li class="nav-item nearby_button" style="display: none;">
+                    <a class="nav-link" href="#"><button class="nearby_btn">வெளி<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <!-- Slider -->
+    <div class="cont">
+        <div class="slider">
+            <div class="slide tslide1"></div>
+            <!-- Main -->
+            <div class="slide tslide2"></div>
+            <div class="slide tslide3"></div>
+            <div class="slide tslide4"></div>
+            <div class="slide tslide5"></div>
+        </div>
+    </div>
+
+    <div class="content"></div>
+    <!-- About -->
+    <div id="about"><br></div>
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="title">சித்தா பற்றி</h1>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../imgs/about.png" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <p class="tabouttxt">
+                        சித்த மருத்துவம் என்பது இந்தியாவின் தமிழ்நாட்டிலிருந்து உருவான ஒரு பாரம்பரிய மருத்துவமாகும், இது பல நூற்றாண்டுகளாக நடைமுறையில் உள்ளது. கிராமப்புற இந்தியாவில், சித்தர்கள் உள்ளூர் "குணப்படுத்துபவர்களாக" மாறுவதற்கு மாஸ்டர்-சீடர் உறவுகள் மூலம் பாரம்பரியமாக முறைகளைக் கற்றுக்கொண்டனர்.
+                    </p>    
+                    <button onclick="window.location.href='about.html'" class="btn btn-dark btnknow">மேலும் அறிக</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Content -->
+    <div class="container" id="problem">
+        <div class="row">
+            <div class="col-lg-12"><h1 class="title">உங்கள் நிரந்தர தீர்வைக் கண்டறியவும்!</h1></div>
+            <div class="col-lg-0"></div>
+            <!-- List of Categories Starts Here -->
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/bodypain.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t1">உடல் வலி</h1>
+                        <button onclick="window.location.href='body_pain.html'" class="btn btn1">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/allergy.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t4">ஒவ்வாமை</h1>
+                        <button onclick="window.location.href='allergy.html'" class="btn btn4">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/digestion.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t3">செரிமானம்</h1>
+                        <button onclick="window.location.href='t_digestion.html'" class="btn btn3">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/flu.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t2">குளிர் காய்ச்சல்</h1>
+                        <button onclick="window.location.href='flu.html'" class="btn btn2">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/injury.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t5">காயம்</h1>
+                        <button onclick="window.location.href='injury.html'" class="btn btn5">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 prob">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">
+                        <img class="cate" src="../imgs/headache.png" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="t t6">Headache</h1>
+                        <button onclick="window.location.href='headache.html'" class="btn btn6">திற</button>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <!-- List of Categories Ends Here -->
+        </div>
+    </div>
+    <hr>
+
+    <div class="mentor" id="mentor">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12"><h1 class="title">எங்கள் சான்றளிக்கப்பட்ட மருத்துவர்கள்</h1></div>
+                <div class="col-lg-6 da">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="../imgs/men1.png" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="docname">டாக். எஸ் பிரியா</h3>
+                            <h6 class="degree">பி.எஸ்.எம்.எஸ் , எம்.டி (சித்த)</h6>
+                            <p><em>ஒரு பாரம்பரிய சித்த மருத்துவ பயிற்சியாளர், எத்னோஃபார்மகாலஜிஸ்ட், தத்துவஞானி மற்றும் மருத்துவ பத்திரிகையாளர்.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 da">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="../imgs/men2.png" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="docname">டாக். பிரசாத் டி</h3>
+                            <h6 class="degree">பி.எஸ்.எம்.எஸ் , எம்.டி (சித்த)</h6>
+                            <p><em>ஒரு பாரம்பரிய சித்த மருத்துவ பயிற்சியாளர், எத்னோஃபார்மகாலஜிஸ்ட், தத்துவஞானி மற்றும் மருத்துவ பத்திரிகையாளர்.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 da">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="../imgs/men3.png" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="docname">டாக். பெஞ்சமின் இ</h3>
+                            <h6 class="degree">பி.எஸ்.எம்.எஸ் , எம்.டி (சித்த)</h6>
+                            <p><em>ஒரு பாரம்பரிய சித்த மருத்துவ பயிற்சியாளர், எத்னோஃபார்மகாலஜிஸ்ட், தத்துவஞானி மற்றும் மருத்துவ பத்திரிகையாளர்.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 da">
+                    <h3 class="docname">நியமனங்களுக்கு <br>எங்கள் மருத்துவர்களுடன் </h3>
+                    <button onclick="open_post()" class="btn btn-outline-dark">பதிவு</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 branding">
+                    <img src="../imgs/icon.png" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;திரு மருத்துவம்
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">முகவரி:</p>
+                    <p class="address">
+                        #123, XYZ தெரு, ABC காலனி, <br>மதுரவோயல், சென்னை, <br>தமிழ்நாடு, இந்தியா <br>அஞ்சல் குறியீடு: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">தொடர்புக்கு:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+</body>
+</html>

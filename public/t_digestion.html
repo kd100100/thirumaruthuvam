@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>செரிமானம்</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/icon.png">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/prob.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/datamanager.css">
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Data Manager -->
+    <div onclick="opendatamanager()" id="openbutton1">
+        <h4>சுகாதார பதிவுகள் </h4>
+    </div>
+    <div id="datamanager">
+        <div class="row">
+            <div class="col-lg-12 ttitle"><h1 class="">தரவு மேலாளர்</h1></div>
+            <div class="col-lg-12 doctorlist" id="problemslist">
+                <div class="row">
+                    <div class="col-lg-6"><h3 class="heading">டாக்டர்</h3></div>
+                    <div class="col-lg-6"><h3 class="heading">பிரச்சனை</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Dr. D Manoah</p></div>
+                    <div onclick="opendetailed()" class="col-lg-6"><p class="problist">Migraine</p></div>
+                    <div class="col-lg-12" id="probdetail"><p class="probdetail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tenetur exercitationem eos vel nisi laborum ab voluptatem iste animi illo natus deserunt quaerat facere nihil, obcaecati, cum repellendus sapiente! Soluta.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="openaddremove()" class="btn btn-outline-success">சேர்க்கவும் / நீக்கவும்</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">மூடு</div></div>
+                    </div>
+                </div>    
+            </div>   
+            <div class="col-lg-12 doctorlist" id="doctorslist">
+                <div class="row">
+                    <div class="col-lg-5"><h3 class="heading">பதிவு எண்</h3></div>
+                    <div class="col-lg-7"><h3 class="heading">டாக்டர்</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">அணுகலை அகற்று ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendelete()" class="col-lg-5"><p class="problist">8624</p></div>
+                    <div onclick="opendelete()" class="col-lg-7"><p class="problist">Dr. D Manoah</p></div>
+                    <div class="col-lg-12" id="remove"><p class="remove">அணுகலை அகற்று ? <i class="fa fa-trash"></i></p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div class="col-lg-12"><input type="text" name="" id='' class="input" placeholder="+ மருத்துவரின் பதிவு எண்ணைச் சேர்க்கவும்"><i onclick="" class="fa fa-check"></i></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="closeaddremove()" class="btn btn-outline-success">தரவு மேலாளர்</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">மூடு</div></div>
+                    </div>
+                </div>    
+            </div>        
+        </div>
+        
+    </div>
+    <script>
+        function opendatamanager(){
+            document.getElementById('datamanager').style.right='0';
+        }
+        function closedatamanager(){
+            document.getElementById('datamanager').style.right='-500px';
+        }
+
+        function opendetailed(){
+            document.getElementById('probdetail').style.display='block';
+        }
+        function opendelete(){
+            document.getElementById('remove').style.display='block';
+        }
+        function openaddremove(){
+            document.getElementById('problemslist').style.display='none';
+            document.getElementById('doctorslist').style.display='block';
+        }
+        function closeaddremove(){
+            document.getElementById('problemslist').style.display='block';
+            document.getElementById('doctorslist').style.display='none';
+        }
+    </script>
+
+        
+    <div class="chooseage" id="chooser">
+        <div class="container"><div class="row">
+            <div class="col-lg-6">
+                <div class="container"><div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 age prob1">
+                        <img src="{{ url_for('static',filename= 'imgs/baby.png')}}" alt="">
+                        <h1 class="tit">குழந்தை</h1>
+                        <button onclick="hidechoice()" class="btn btn1">திற</button>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container"><div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 age prob1">
+                        <img src="{{ url_for('static',filename= 'imgs/teen.png')}}" alt="">
+                        <h1 class="tit">இளைஞர்கள்</h1>
+                        <button onclick="hidechoice()" class="btn btn1">திற</button>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container"><div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 age prob1">
+                        <img src="{{ url_for('static',filename= 'imgs/adult.png')}}" alt="">
+                        <h1 class="tit">பெரியவர்</h1>
+                        <button onclick="hidechoice()" class="btn btn1">திற</button>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container"><div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 age prob1">
+                        <img src="{{ url_for('static',filename= 'imgs/aged.png')}}" alt="">
+                        <h1 class="tit">முதியவர்கள்</h1>
+                        <button onclick="hidechoice()" class="btn btn1">திற</button>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div></div>
+            </div>
+        </div></div>
+    </div>
+
+    <script>
+        function hidechoice(){
+            document.getElementById('chooser').style.zIndex='-1000';
+        }
+    </script>
+    
+    <!-- Navbar -->
+    <header>
+        <a href="digestion.html"><img src="../imgs/translate.png" class="translate" alt=""></a>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                <img src="../imgs/icon.png" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;திரு மருத்துவம்
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="t_index.html" >முகப்பு</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="about.html">பற்றி</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="forum_public.html">மன்றம்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="nearby.html">அருகில்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="verify.html">சரிபார்க்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="library.html">டி-நூலகம்</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="shop_cust.html">கடை</a>
+                    </li>
+                    <li class="nav-item nearby_button">
+                    <a class="nav-link" href="login_public.html"><button class="nearby_btn">நுழை<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                    <li class="nav-item nearby_button" style="display: none;">
+                    <a class="nav-link" href="#"><button class="nearby_btn">வெளி<i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+        <hr>
+    </header>
+    <div class="all">
+    <div class="content"></div>
+    <!-- About -->
+    <div id="about"><br></div>
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="../imgs/digestion_landing.png" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <h1 class="title t3">செரிமானம்</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Content -->
+    <div class="container problem" id="problem">
+        <div class="row">
+            <!-- List of Problems Starts Here -->
+            <div class="col-lg-6">
+                <img onclick="window.location.href='https://www.youtube.com/watch?v=UPWnFYXqFBA'" class="ytlogo" src="../imgs/yt_logo.png" alt="">
+                <div class=" prob prob3">
+                <h1 class="title_in">&nbsp;மலச்சிக்கல்</h1>
+                <hr>
+                <h3 class="title_">&nbsp;&nbsp;தேவையான மருந்துகள்:</h3>
+                <ul>
+                    <li>கரியபோளம்</li>
+                    <li>பனை வெல்லம்</li>
+                    <li>தண்ணீர்</li>
+                </ul>
+                <h3 class="title_">&nbsp;&nbsp;செய்முறை:</h3>
+                <ol>
+                    <li>ஒரு பேசினில் 100 மில்லி தண்ணீரை ஊற்றி 5 நிமிடங்கள் வேகவைக்கவும்.</li>
+                    <li>கொதிக்கும் நீரில் 3 கிராம் கரியபோளம் மற்றும் 5 கிராம் பனை வெல்லம் சேர்க்கவும்.</li>
+                    <li>சில நிமிடங்கள் வேகவைத்து, திரவத்தை வடிகட்டி குடிக்கவும்.</li>
+                </ol>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img onclick="window.location.href='https://www.youtube.com/watch?v=woUJGpm-Zck'" class="ytlogo" src="../imgs/yt_logo.png" alt="">
+                <div class=" prob prob3">
+                <h1 class="title_in">&nbsp;பேதி</h1>
+                <hr>
+                <h3 class="title_">&nbsp;&nbsp;தேவையான மருந்துகள்:</h3>
+                <ul>
+                    <li>தான்றிக்காய்</li>
+                    <li>தண்ணீர்</li>
+                    <li>கருப்பு உப்பு</li>
+                    <li>படிகாரம்</li>
+                </ul>
+                <h3 class="title_">&nbsp;&nbsp;செய்முறை:</h3>
+                <ol>
+                    <li>10 தான்றிக்காய், 10 கிராம் கருப்பு உப்பு, 5 கிராம் படிகாரம் ஆகியவற்றை அடித்து நொறுக்கி பொடியாக மாற்றவும்.</li>
+                    <li>ஒரு பேசினில் 100 மில்லி தண்ணீரை ஊற்றி 5 நிமிடங்கள் வேகவைக்கவும். உட்பொருட்களின் அளவை மாற்ற வேண்டாம் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.</li>
+                    <li>இப்போது அந்த பிசைந்த பொடியை எடுத்து ஒரு காகிதத்தில் போட்டு தேநீர் பையாக மாற்றவும்.</li>
+                    <li>மருந்து கொண்ட பையை கொதிக்கும் நீருக்கு மேலே வைத்திருங்கள்.</li>
+                    <li>பின்னர் தூள் பையை எடுத்து உலர்த்தும் வரை வெயிலில் வைக்கவும்.</li>
+                    <li>பெரியவர்களுக்கு வெண்ணெய் பாலுடன் 5 கிராம் தூள் சேர்க்கவும், குழந்தைகளுக்கு தேன் மற்றும் தண்ணீருடன் 2 அல்லது 3 கிராம் தூள் சேர்க்கவும்.</li>
+                </ol>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img onclick="window.location.href='https://www.youtube.com/watch?v=PINBTcILWgU'" class="ytlogo" src="../imgs/yt_logo.png" alt="">
+                <div class=" prob prob3">
+                <h1 class="title_in">&nbsp;அமிலத்தன்மை</h1>
+                <hr>
+                <h3 class="title_">&nbsp;&nbsp;தேவையான மருந்துகள்:</h3>
+                <ul>
+                    <li>தேன்</li>
+                    <li>தண்ணீர்</li>
+                    <li>மஞ்சள் தூள்</li>
+                    <li>ஜீரா</li>
+                    <li>நறுக்கிய இஞ்சி</li>
+                    <li>ஏலக்காய்</li>
+                </ul>
+                <h3 class="title_">&nbsp;&nbsp;செய்முறை:</h3>
+                <ol>
+                    <li>இஞ்சியின் சிறிய துண்டுகளை வெட்டி தண்ணீரில் சேர்த்து கொதிக்க வைக்கவும்.</li>
+                    <li>சாறை எடுத்து சிறிது மஞ்சள் தூள் மற்றும் தேன் சேர்க்கவும்.நன்றாக கலந்து குடிக்கவும்.</li>
+                    <li>தண்ணீரில் இரண்டு ஏலக்காய் சேர்த்து வெற்று நீருக்கு பதிலாக குடிக்கவும்.</li>
+                </ol>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img onclick="window.location.href='https://www.youtube.com/watch?v=vHCFdeGEI_Q'" class="ytlogo" src="../imgs/yt_logo.png" alt="">
+                <div class=" prob prob3">
+                <h1 class="title_in">&nbsp;அல்சர் </h1>
+                <hr>
+                <h3 class="title_">&nbsp;&nbsp;தேவையான மருந்துகள்:</h3>
+                <ul>
+                    <li>அத்தி இலை</li>
+                    <li>ஜீரா</li>
+                    <li>பனை வெல்லம்</li>
+                    <li>பால்</li>
+                </ul>
+                <h3 class="title_">&nbsp;&nbsp;செய்முறை:</h3>
+                <ol>
+                    <li>ஜீரா அரை டீஸ்பூன் எடுத்து அதை நொறுக்கி 100 மில்லி தூய பாலுடன் சேர்க்கவும்.</li>
+                    <li>அத்தி இலைஅரைத்து பாலில் சேர்க்கவும்.</li>
+                    <li>உங்கள் விருப்பத்திற்கு ஏற்ப பனை வெல்லம் சேர்க்கவும்.</li>
+                    <li>நன்றாக கலந்து குடிக்கவும்.</li>
+                </ol>
+                </div>
+            </div>
+            <!-- List of Problems Ends Here -->
+        </div>
+    </div>
+    </div>
+    
+
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 branding">
+                    <img src="../imgs/icon.png" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;திரு மருத்துவம்
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">முகவரி:</p>
+                    <p class="address">
+                        #123, XYZ தெரு, ABC காலனி, <br>மதுரவோயல், சென்னை, <br>தமிழ்நாடு, இந்தியா <br>அஞ்சல் குறியீடு: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">தொடர்புக்கு:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+</body>
+</html>

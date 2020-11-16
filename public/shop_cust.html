@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/icon.png">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/shop_cust.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <script src="../index.js"></script>
+
+</head>
+<body>
+    
+    <div class="postbg" id="confirmation">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 p11" id="post_box"> 
+                <h1 class="logintitle">Confirmation </h1>
+                <button onclick="close_post1()" class="btnclse"><i class="fa fa-close"></i></button>
+                <hr>
+                <form >
+                   <center> <h4 id="conf">Thanks for Shopping with us... <br>Order Number: </h4></center>
+                </form>
+            </div>        
+            <div class="col-lg-4"></div> 
+        </div>
+        </div>
+    </div>
+
+    <!-- Post -->
+    <div class="postbg" id="post_bg">
+        <div class="container">
+        <div class="row" id="checkhide">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 postbox" id="post_box"> 
+                <h1 class="logintitle">Checkout </h1>
+                <button onclick="close_post()" class="btnclse"><i class="fa fa-close"></i></button>
+                <hr>
+                <form>
+                    <h4>Payment Options:</h4>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Debit Card</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Credit Card</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Cash On Delivery</label><br>
+                    <button onclick="checkout()" type="button" class="btn btn-success postbtn">Pay</button>
+                </form>
+            </div>        
+            <div class="col-lg-3"></div> 
+        </div>
+        </div>
+    </div>
+
+    <div class="cart" id="cart">
+        <h1 class="cart_title">Cart</h1>
+        <button onclick="close_cart()" class="nearby_btn c">Close</button>
+        <hr>  
+
+        <div class="row">
+            <div class="col-lg-7 h">Item</div>
+            <div class="col-lg-2 h">Qty</div>
+            <div class="col-lg-3 h">Price</div>
+            
+            <!-- Products Starts Here -->
+            <div class="col-lg-7 l">Name</div>
+            <div class="col-lg-2 l">Qty</div>
+            <div class="col-lg-3 l">&#x20B9;Price</div>
+            <div class="col-lg-7 l">Name</div>
+            <div class="col-lg-2 l">Qty</div>
+            <div class="col-lg-3 l">&#x20B9;Price</div>
+            <div class="col-lg-7 l">Name</div>
+            <div class="col-lg-2 l">Qty</div>
+            <div class="col-lg-3 l">&#x20B9;Price</div>
+            <div class="col-lg-7 l">Name</div>
+            <div class="col-lg-2 l">Qty</div>
+            <div class="col-lg-3 l">&#x20B9;Price</div>
+            <!-- Products Ends Here -->
+        </div>
+        <div class="total">  
+        <hr>
+        <div class="row">
+            <div class="col-lg-3 ch">Total</div>
+            <div class="col-lg-5 ch">&#x20B9;1000.00</div>
+            <div class="col-lg-4"><button onclick="open_post()" class="btn btn-outline-success">Checkout</button></div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header>
+        <a href="t_shop_cust.html"><img src="../imgs/translate.png" class="translate" alt=""></a>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html">
+                <img src="../imgs/icon.png" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Thiru Maruthuvam
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="index.html" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="forum_public.html">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="nearby.html">Nearby</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="verify.html">Verify</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="library.html">D-Library</a>
+                    </li>
+                    <li class="nav-item nearby_button">
+                    <a id="open" class="nav-link" href="#"><button onclick="open_cart()" class="nearby_btn">Go to Cart &#x1f6d2;</button></a>
+                    
+                    </li>
+                </ul>
+                </div>
+            </nav>  
+        </div>
+        <hr>
+    </header>
+
+
+    <script>
+        function open_cart(){
+            document.getElementById('cart').style.right='0px';
+        }
+        function close_cart(){
+            document.getElementById('cart').style.right='-360px';
+        }
+    </script>
+    <!-- Slider -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../imgs/ec1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../imgs/ec2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../imgs/ec3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <!-- <span class="visually-hidden">Previous</span> -->
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <!-- <span class="visually-hidden">Next</span> -->
+        </a>
+      </div>
+    
+    <!-- Products -->
+    <div class="container product">
+        <div class="row">
+            <!-- Product Listing Start -->
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="box">
+                    <h2 class="header">Kabasura Kudineer</h2>
+                    <hr>
+                    <img src="../imgs/product.jpg" alt="">
+                    <h4>Price: &#x20B9;100.00</h4>
+                    <div class="cartadd">
+                        <button>-</button><button onclick="open_cart()">&#x1f6d2;</button><button>+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 branding">
+                    <img src="../imgs/icon.png" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;Thiru Maruthuvam  
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Find us at:</p>
+                    <p class="address">
+                        #123, XYZ Street, ABC Colony, <br>Madhurovoyal, Chennai, <br>Tamilnadu, India <br>Pincode: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Contact us at:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function open_post(){
+            document.getElementById('post_bg').style.display='block';
+        }
+        function close_post(){
+            document.getElementById('post_bg').style.display='none';
+        }
+
+        function checkout(){
+            document.getElementById('checkhide').style.display='none';
+            setTimeout(checko, 2000);
+        }        
+        function checko(){
+            document.getElementById('post_bg').style.display='none';
+            document.getElementById('conf').innerHTML=document.getElementById('conf').innerHTML+(Math.floor(Math.random() * 20)+1000);
+            document.getElementById('confirmation').style.display='block';
+        }
+        function close_post1(){
+            document.getElementById('confirmation').style.display='none';
+
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+</body>
+</html>
