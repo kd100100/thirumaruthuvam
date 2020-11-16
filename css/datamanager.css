@@ -1,0 +1,114 @@
+#openbutton, #openbutton1{
+    position: fixed;
+    top: 45vh;
+    transform: rotate(90deg);
+    z-index: 100;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+#openbutton{
+    right: -75px;
+}
+#openbutton1{
+    right: -110px;
+}
+#openbutton h4, #openbutton1 h4{
+    margin: 9px 15px 20px 15px;
+}
+#datamanager{
+    position: fixed;
+    top: 0;
+    /* right: -500px; */
+    right: -500px;
+    background-color: #ffffff;
+    z-index: 105;
+    width: 500px;
+    height: 100vh;
+    overflow: hidden;
+    transition: 0.5s;
+    text-align: center;
+}
+#datamanager .title{
+    margin: 15px;
+    padding: 0;
+}
+#datamanager .ttitle{
+    margin: 15px;
+    padding: 0;
+    font-size: 1.5rem;
+}
+.hrspl1{
+    margin: 10px 0;
+}
+.hrspl
+{
+    border-top: 1px solid #2b3664;
+    padding-bottom: 10px;
+}
+.doctorlist{
+    padding-top: 10px;
+    height: 89vh;
+}
+.problist{
+    margin: 0;
+    cursor: pointer;
+}
+.probdetail{
+    text-align: left;
+    margin: 10px 40px 0px 40px;
+    transition: 0.5s;
+}
+.remove{
+    /* text-align: left; */
+    margin: 10px 40px 0px 40px;
+    transition: 0.5s;
+}
+#probdetail1{
+    display: none;
+}
+#probdetail2{
+    display: none;
+}
+#remove1{
+    display: none;
+}
+#remove2{
+    display: none;
+}
+.buttons{
+    position: absolute;
+    left: 40px;
+    width: 450px;
+    bottom: 10px;
+}
+.buttons .col-lg-6{
+    padding: 0 !important;
+}
+.buttons .btn{
+    margin: 20px;
+    width: 80%;
+}
+#doctorslist{
+    display: none;
+}
+.doctorlist .fa{
+    font-size: 20px !important;
+    cursor: pointer;
+}
+.doctorlist input{
+    background-color: transparent;
+    border: 0;
+    width: 60%;
+}
+.doctorlist .input{
+    background-color: transparent;
+    border: 0;
+    width: 75%;
+}
+.doctorlist input:focus{
+    outline: none;
+}

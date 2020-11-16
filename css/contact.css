@@ -1,0 +1,49 @@
+
+/* Contact */
+.contactbg{
+	min-height: 180px;
+	background-color: #2b3664;
+	color: rgba(238, 238, 238, 0.9);
+}
+.branding img{
+    width: 80px;
+    height: 100px;
+}
+.branding{
+	font-size: 150%;
+	color: #eeeeee;
+	line-height: 90px;
+	padding-top: 50px;
+}
+.ebranding{
+	font-size: 170%;
+	color: #eeeeee;
+	line-height: 80px;
+	padding-top: 50px;
+}
+.find{
+	padding-top: 20px;
+	text-decoration: underline;
+	font-size: 130%;
+	text-align: left;
+}
+.address{
+	text-align: left;
+}
+.fa-facebook, .fa-twitter, .fa-youtube{
+	font-size: 40px;
+	padding: 10px;
+}
+.fa-facebook:hover, .fa-twitter:hover, .fa-youtube:hover{
+	text-decoration: none;
+}
+.address a{
+	color: rgba(238, 238, 238, 0.9);
+}
+.fa-sign-in{
+	font-size: 20px !important;
+	padding: 5px;
+}
+.fa-sign-in:hover{
+	text-decoration: none;
+}

@@ -1,0 +1,198 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #e0e0e0;
+	overflow-x: hidden;
+}
+
+/* Navigation Bar */
+header{
+	position: fixed;
+	background-color: #e0e0e0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    transition: 1s;
+}
+.translate{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+}
+.nearby_btn{
+	background-color: #28343E;
+	color: #fff;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.nearby_btn:hover{
+	border: 2px solid #28343E;
+	background-color: saddlebrown;
+	color: #fff;
+}
+.height{
+	padding: 14px !important;
+	font-size: 1.1rem;
+}
+.active{
+	font-weight: 600;
+}
+.navbar-brand{
+	font-size: 1.4rem;
+}
+hr{
+    margin: 0;
+}
+.tt{
+	font-size: 1.2rem;
+}
+.theight{
+	padding-top: 17px;
+}
+
+
+/* Content */
+.content{
+    height: 10vh;
+    background-color: #12151C;
+}
+.cate{
+	width: 150px;
+}
+.title{
+	text-align: center;
+	line-height: 250px;
+	/* text-decoration: underline; */
+}
+.cen{
+	text-align: center;
+}
+
+.prob{
+	margin: 20px 0;
+	text-align: center;
+}
+.t{
+	padding: 6px;
+}
+.btn{
+	font-size: 15px;
+	border-radius: 50px;
+	margin: 6px;
+	width: 100px;
+}
+.t1{
+	color: #F95321;
+}
+.btn1{
+	border: 2px solid #F95321;
+}
+.btn1:hover{
+	background-color: #F95321;
+	color: #fff;
+}
+.about img{
+	width: 100%;
+}
+#about{
+    background-color: #12151C;
+}
+.about{
+	z-index: 5;
+	background: #12151C;
+	color: #e0e0e0;
+	padding-bottom: 0px;
+	height: 300px;
+}
+.title{
+    font-size: 3.5rem;
+    padding-bottom: 10px;
+}
+.t1{
+    color: #F95321;
+}
+.t2{
+    color: #0BC3B9;
+}
+.t3{
+    color: #0199FF;
+}
+.t4{
+    color: #E41930;
+}
+.t5{
+    color: #C10000;
+}
+.t6{
+    color: #37B9D1;
+}
+.abouttxt{
+	font-size: 1.5rem;
+	padding-top: 40px;
+}
+.problemmm{
+	background-color: #e0e0e0;
+}
+.problem{
+	padding-top: 30px;
+}
+.all{
+	background-color: #e0e0e0;
+}
+
+.prob{
+    margin: 10px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    text-align: left;
+    border-radius: 20px;
+	height: 730px;
+	padding-right: 10px;
+}
+
+.prob1{
+    border: 2px solid #F95321;
+}
+.prob2{
+    border: 2px solid #0BC3B9;
+}
+.prob3{
+    border: 2px solid #0199FF;
+}
+.prob4{
+    border: 2px solid #E41930;
+}
+.prob5{
+    border: 2px solid #C10000;
+}
+.prob6{
+    border: 2px solid #37B9D1;
+}
+
+footer{
+	background-color: #12151C;
+	color: #fff;
+	padding: 30px;
+	text-align: center;
+}
+footer i{
+	text-align: left;
+	font-size: 4rem !important;
+}
+
+.ttit{
+	font-size: 1.7rem;
+}
+.ytlogo{
+	position: absolute;
+	right: 30px;
+	top: 0;
+	width: 150px;
+	cursor: pointer;
+}

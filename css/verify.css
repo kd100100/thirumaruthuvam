@@ -1,0 +1,140 @@
+html{
+	
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #e0e0e0;
+	overflow-x: hidden;
+}
+
+
+/* Navigation Bar */
+.nearby_btn1{
+	background-color: #28343E;
+	color: #fff;
+	width: 150px;
+	height: 40px;
+	border: 0;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.nearby_btn1:hover{
+	border: 2px solid #28343E;
+	background-color: saddlebrown;
+	color: #fff;
+}
+header{
+	position: fixed;
+	background-color: #e0e0e0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    transition: 1s;
+} 
+.translate{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+}
+.nearby_btn{
+	background-color: #28343E;
+	color: #fff;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.nearby_btn:hover{
+	border: 2px solid #28343E;
+	background-color: saddlebrown;
+	color: #fff;
+}
+.height{
+	padding: 14px !important;
+	font-size: 1.1rem;
+}
+.active{
+	font-weight: 600;
+}
+.navbar-brand{
+	font-size: 1.4rem;
+}
+hr{
+	margin: 0;
+}
+.tt{
+	font-size: 1.2rem;
+}
+.theight{
+	padding-top: 17px;
+}
+
+.searchnav{
+    background-color: #2b3664;
+    padding-top: 73px;
+    height: 170px;
+    text-align: center;
+}
+.searchnav .title{
+    color: #fff;
+    padding-top: 20px;
+}
+.searchnav .ttitle{
+    color: #fff;
+    padding-top: 15px;
+    font-size: 2rem;
+}
+.input input{
+    background-color: transparent;
+    border: 0;
+    margin-top: 30px;
+    padding: 0 40px;
+    padding-bottom: 20px;
+    height: 40px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+}
+input:focus{
+    outline: 0;
+}
+.doc{
+    min-height: 334px;
+    padding-bottom: 40px;
+}
+.doc .title{
+    text-align: center;
+    padding-top: 30px;
+}
+.doc .ttitle{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2rem;
+}
+.doc .h{
+    text-align: center;
+}
+.doc .th{
+    padding-top: 10px;
+    text-align: center;
+}
+.doc .tth{
+    font-size: 1.5rem;
+}
+hr{
+    margin: 0 !important;
+}
+.doc .hrspl{
+    margin-top: 5px !important;
+    border-top: 1px solid;
+}
+.doc .l{
+    text-align: center;
+    padding: 15px 0;
+}
+.doc p{
+    margin: 0 !important;
+}

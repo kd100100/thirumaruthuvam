@@ -1,0 +1,126 @@
+html{
+	
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #e0e0e0;
+	overflow-x: hidden;
+}
+
+
+/* Navigation Bar */
+.nearby_btn1{
+	background-color: #28343E;
+	color: #fff;
+	width: 150px;
+	height: 40px;
+	border: 0;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.nearby_btn1:hover{
+	border: 2px solid #28343E;
+	background-color: saddlebrown;
+	color: #fff;
+}
+header{
+	position: fixed;
+	background-color: #e0e0e0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    transition: 1s;
+} 
+.translate{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+}
+.nearby_btn{
+	background-color: #28343E;
+	color: #fff;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.nearby_btn:hover{
+	border: 2px solid #28343E;
+	background-color: saddlebrown;
+	color: #fff;
+}
+.height{
+	padding: 14px !important;
+	font-size: 1.1rem;
+}
+.active{
+	font-weight: 600;
+}
+.navbar-brand{
+	font-size: 1.4rem;
+}
+hr{
+	margin: 0;
+}
+.tt{
+	font-size: 1.2rem;
+}
+.theight{
+	padding-top: 17px;
+}
+
+.searchnav{
+    background-color: #2b3664;
+    padding-top: 73px;
+    height: 170px;
+    text-align: center;
+}
+.searchnav .title{
+    color: #fff;
+    padding-top: 20px;
+}
+.searchnav .ttitle{
+    color: #fff;
+    padding-top: 15px;
+    font-size: 2rem;
+}
+.input input{
+    background-color: transparent;
+    border: 0;
+    border-top: 1px solid #2b3664;
+    border-bottom: 1px solid #2b3664;
+    margin-top: 30px;
+    padding: 20px 40px 25px 40px;
+    height: 40px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 0;
+}
+input:focus{
+    outline: 0;
+}
+.hospital{
+    min-height: 335px;
+    z-index: -10;
+}
+.hospital{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.marg{
+    border: 2px solid #2b3664;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+}
+.hospital .marg .name{
+    padding: 10px;
+}
+.hospital .marg p{
+    padding: 10px 20px;
+    font-size: 120%;
+}
