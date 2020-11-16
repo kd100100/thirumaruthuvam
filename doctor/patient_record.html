@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Records</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/icon.png">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/patient.css">
+    <link rel="stylesheet" href="../css/verify.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/datamanager.css">
+
+    <!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <!-- Data Manager -->
+    <div id="datamanager">
+        <div class="row">
+            <div class="col-lg-12 title"><h1 class="">Vijay Kumar</h1></div>
+            <div class="col-lg-12 doctorlist" id="problemslist">
+                <div class="row">
+                    <div class="col-lg-6"><h3 class="heading">Doctor</h3></div>
+                    <div class="col-lg-6"><h3 class="heading">Problem</h3></div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div onclick="opendetailed1()" class="col-lg-6"><p class="problist">Dr. Rithvik T</p></div>
+                    <div onclick="opendetailed1()" class="col-lg-6"><p class="problist">Urticaria</p></div>
+                    <div class="col-lg-12" id="probdetail1"><p class="probdetail1">Apply Aloe Vera gel when rashes appear.
+                        Neem paste also can be applied externally. <br>Avoiding factors such as excess intake of salt, sour gruels and mustard; exposure to cold wind; improper emesis; insect bite.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                    <div onclick="opendetailed2()" class="col-lg-6"><p class="problist">Dr. Kamalesh</p></div>
+                    <div onclick="opendetailed2()" class="col-lg-6"><p class="problist">Diabetes</p></div>
+                    <div class="col-lg-12" id="probdetail2"><p class="probdetail2">ake powder of fenugreek twice a day with hot water. <br>Take Triphala powder twice a day with hot water. Add lady’s finger every day in the diet.</p></div>
+                    <div class="col-lg-12"><hr class="hrspl1"></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="openaddremove()" class="btn btn-outline-success">Add Report</div></div>
+                        <div class="col-lg-6"><div onclick="closedatamanager()" class="btn btn-outline-danger">Close</div></div>
+                    </div>
+                </div>    
+            </div>   
+            <div class="col-lg-12 doctorlist" id="doctorslist">
+                <div class="row">
+                   <div class="col-lg-12"><hr></div>
+                   <div class="col-lg-12">
+                    <label for=""><h3>Problem: </h3></label>
+                    <input type="text" placeholder="Problem">
+                    </div>
+                   <div class="col-lg-12">
+                        <h3>Add Medication</h3>
+                        <textarea name="message" rows="10" cols="60" placeholder="Treatment Undertaken with Medicines Prescribed"></textarea>
+                   </div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="row">
+                        <div class="col-lg-6"><div onclick="closeaddremove()" class="btn btn-outline-danger">Patient Data</div></div>
+                        <div class="col-lg-6"><div class="btn btn-outline-success">Add Treatment</div></div>
+                    </div>
+                </div>    
+            </div>        
+        </div>
+        
+    </div>
+    <script>
+        function opendatamanager(){
+            document.getElementById('datamanager').style.right='0';
+        }
+        function closedatamanager(){
+            document.getElementById('datamanager').style.right='-500px';
+        }
+
+        function opendetailed1(){
+            document.getElementById('probdetail1').style.display='block';
+        }
+        function opendetailed2(){
+            document.getElementById('probdetail2').style.display='block';
+        }
+        function opendelete(){
+            document.getElementById('remove').style.display='block';
+        }
+        function openaddremove(){
+            document.getElementById('problemslist').style.display='none';
+            document.getElementById('doctorslist').style.display='block';
+        }
+        function closeaddremove(){
+            document.getElementById('problemslist').style.display='block';
+            document.getElementById('doctorslist').style.display='none';
+        }
+    </script>
+
+    <!-- Navbar -->
+    <header>
+        <a href="t_index.html"><img src="../imgs/translate.png" class="translate" alt=""></a>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                <img src="../imgs/icon.png" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Thiru Maruthuvam
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link height" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="forum_doc.html">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="nearby.html">Nearby</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="verify.html">Verify</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa height" href="library.html">D-Library</a>
+                    </li>
+                    <li class="nav-item nearby_button">
+                    <a class="nav-link" href="patient_record.html"><button class="nearby_btn1">Patient Records</button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>  
+        </div>
+        <hr>
+    </header>
+    <div class="full">
+        <!-- Content -->
+    
+        <div class="searchnav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="title">Patients</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+        <div class="doc">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 h">
+                        <h3>Patient Name</h3>
+                    </div>
+                    <div class="col-lg-3 h">
+                        <h3>Mobile Number</h3>
+                    </div>
+                    <div class="col-lg-2 h">
+                        <h3>Age</h3>
+                    </div>
+                    <div class="col-lg-2 h">
+                        <h3>Open</h3>
+                    </div>
+                    <div class="col-lg-12"><hr class="hrspl"></div>
+                    <div class="col-lg-12">
+                        <div class="input" id="myDropdown">
+                            <input type="text" placeholder="&#128269;  Patients Name/Mobile Number" id="myInput" onkeyup="filterFunction()">
+                            <div class="row listofpatient">
+                                <div class="col-lg-5 l">
+                                    <p>Krish Verma</p>
+                                </div>
+                                <div class="col-lg-3 l">
+                                    <p>8453256314</p>
+                                </div>
+                                <div class="col-lg-2 l">
+                                    <p>19</p>
+                                </div>
+                                <div class="col-lg-2 l">
+                                    <p onclick="opendatamanager()"><i class="fa fa-folder-open"></i></p>
+                                </div>
+                                <div class="col-lg-12"><hr></div>
+                                <div class="col-lg-5 l">
+                                    <p>Vijay Kumar</p>
+                                </div>
+                                <div class="col-lg-3 l">
+                                    <p>7635419654</p>
+                                </div>
+                                <div class="col-lg-2 l">
+                                    <p>62</p>
+                                </div>
+                                <div class="col-lg-2 l">
+                                    <p onclick="opendatamanager()"><i class="fa fa-folder-open"></i></p>
+                                </div>
+                                <div class="col-lg-12"><hr></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+        <!-- Contact -->
+        <div class="contactbg">
+            <div class="container">
+                <div class="row contact">
+                    <div class="col-lg-4 branding">
+                        <img src="../imgs/icon.png" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                        &nbsp;Thiru Maruthuvam
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <p class="find">Find us at:</p>
+                        <p class="address">
+                            #123, XYZ Street, ABC Colony, <br>Madhurovoyal, Chennai, <br>Tamilnadu, India <br>Pincode: 600094
+                        </p>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <p class="find">Contact us at:</p>
+                        <p class="address">
+                            Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                            Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-youtube"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = document.getElementsByClassName("listofpatient");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                }   
+                else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+</body>
+</html>
